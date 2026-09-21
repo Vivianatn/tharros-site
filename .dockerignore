@@ -1,0 +1,12 @@
+.git
+.tools
+.env
+backend/.venv
+backend/tharros.db
+backend/media
+backend/.pytest_cache
+frontend/node_modules
+frontend/dist
+**/__pycache__
+*.log
+start-log.txt

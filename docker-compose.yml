@@ -1,0 +1,18 @@
+# Hébergement : `docker compose up -d` sur le serveur, avec un fichier .env à côté (voir .env.example).
+# Le site écoute sur le port 8000 ; placez Caddy ou Nginx devant pour le HTTPS (exemple dans le README).
+services:
+  tharros:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - tharros-data:/app/backend/data
+      - tharros-media:/app/backend/media
+    environment:
+      DATABASE_URL: sqlite:////app/backend/data/tharros.db
+
+volumes:
+  tharros-data:
+  tharros-media:

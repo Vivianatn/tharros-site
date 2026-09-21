@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Jetons de design — palette et typographie du moodboard « Direction v1 »
+   ========================================================================== */
+@font-face {
+  font-family: 'Big Shoulders Display';
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/big-shoulders-display-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('/fonts/manrope-latin.woff2') format('woff2');
+}
+
+:root {
+  /* Palette */
+  --grenat: #C11F35;
+  --grenat-sombre: #8F1626;
+  --bronze: #B8672E;
+  --bronze-sombre: #8A4A1E;
+  --or: #E8B96B;
+  --encre: #171310;
+  --charbon: #2B2521;
+  --pierre: #6B6058;
+  --pierre-douce: #B3A79B;
+  --pierre-claire: #E4DCD1;
+  --marbre: #F6F1E9;
+  --blanc: #FFFFFF;
+
+  /* Typographie */
+  --font-display: 'Big Shoulders Display', Impact, 'Arial Narrow Bold', sans-serif;
+  --font-text: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Mise en page */
+  --gutter: clamp(16px, 4vw, 40px);
+  --container: 1180px;
+  --chamfer: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --header-h: 76px;
+}
+
+/* --------------------------------------------------------------------------
+   Surfaces : chaque fond définit ses propres couleurs de texte.
+   Tout composant lit --fg, --fg-muted, --heading, --kicker, --link, --line…
+   et ne choisit JAMAIS une couleur de texte en dur : la lisibilité est garantie.
+   -------------------------------------------------------------------------- */
+:root, .surface-light {
+  --surface: var(--marbre);
+  --surface-elevated: var(--blanc);
+  --fg: var(--encre);
+  --fg-soft: var(--charbon);
+  --fg-muted: var(--pierre);          /* 5.4:1 sur marbre */
+  --heading: var(--encre);
+  --kicker: var(--grenat);            /* 5.3:1 */
+  --link: var(--grenat);
+  --link-hover: var(--grenat-sombre);
+  --accent-num: var(--grenat);
+  --line: var(--pierre-claire);
+  --success: var(--bronze-sombre);    /* 6.1:1 */
+  --error: var(--grenat);
+  --input-bg: var(--blanc);
+  --input-border: var(--pierre-claire);
+  --input-fg: var(--encre);
+  --card: var(--charbon);             /* cartes sombres posées sur fond clair */
+  --card-fg: var(--marbre);
+  --card-muted: var(--pierre-claire);
+  --card-num: var(--or);
+  --frise-a: var(--encre);
+  --frise-b: var(--grenat);
+}
+.surface-dark, .surface-charbon {
+  --surface: var(--encre);
+  --surface-elevated: var(--charbon);
+  --fg: var(--marbre);
+  --fg-soft: var(--pierre-claire);
+  --fg-muted: var(--pierre-douce);    /* 7.8:1 sur encre */
+  --heading: var(--marbre);
+  --kicker: var(--or);                /* 10:1 */
+  --link: var(--or);
+  --link-hover: var(--marbre);
+  --accent-num: var(--or);
+  --line: rgba(246, 241, 233, .14);
+  --success: var(--or);
+  --error: var(--or);
+  --input-bg: var(--encre);
+  --input-border: var(--pierre);
+  --input-fg: var(--marbre);
+  --card: var(--charbon);
+  --card-fg: var(--marbre);
+  --card-muted: var(--pierre-claire);
+  --card-num: var(--or);
+  --frise-a: var(--marbre);
+  --frise-b: var(--or);
+}
+.surface-charbon { --surface: var(--charbon); --surface-elevated: var(--encre); --card: var(--encre); --input-bg: var(--encre); }
+.surface-light, .surface-dark, .surface-charbon { background: var(--surface); color: var(--fg); }
