@@ -72,7 +72,7 @@ async function submit() {
           </div>
         </div>
         <div class="field">
-          <label>Image de profil <span class="muted" style="text-transform: none; letter-spacing: 0; font-weight: 500">— modifiable plus tard</span></label>
+          <label>Image de profil <span class="muted" style="text-transform: none; letter-spacing: 0; font-weight: 500">— {{ AVATARS.length }} choix, modifiable plus tard</span></label>
           <AvatarPicker v-model="form.avatar" />
         </div>
         <div class="field field--check">

@@ -82,7 +82,7 @@ class Member(SQLModel, table=True):
     email: str = Field(index=True, unique=True)
     password_hash: str
     display_name: str
-    avatar: str = "a01"  # identifiant d'un des 40 avatars prédéfinis (frontend/public/avatars)
+    avatar: str = "001"  # identifiant d'un des 100 avatars prédéfinis (frontend/public/avatars)
     newsletter: bool = False
     created_at: datetime = Field(default_factory=utcnow)
     last_login_at: Optional[datetime] = None

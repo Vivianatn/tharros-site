@@ -24,7 +24,7 @@ def register(data: MemberRegisterIn, request: Request, response: Response, sessi
     email = data.email.lower()
     if session.exec(select(Member).where(Member.email == email)).first():
         raise HTTPException(status.HTTP_409_CONFLICT, "Un compte existe déjà avec cette adresse")
-    avatar = data.avatar or f"a{random.randint(1, 40):02d}"
+    avatar = data.avatar or f"{random.randint(1, 100):03d}"
     member = Member(email=email, password_hash=hash_password(data.password), display_name=data.display_name.strip(), avatar=avatar, newsletter=data.newsletter, last_login_at=datetime.now(timezone.utc))
     session.add(member)
     if data.newsletter and session.exec(select(Subscriber).where(Subscriber.email == email)).first() is None:

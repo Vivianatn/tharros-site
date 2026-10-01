@@ -13,10 +13,12 @@ def test_member_register_login_and_profile(client):
     assert client.get("/api/account/me").json() is None
     assert client.post("/api/account/login", json={"email": "joueur@exemple.fr", "password": "faux"}).status_code == 401
     assert client.post("/api/account/login", json={"email": "joueur@exemple.fr", "password": "motdepasse-solide"}).status_code == 200
-    assert client.get("/api/account/me").json()["avatar"].startswith("a")
-    assert client.put("/api/account/me", json={"display_name": "Nouveau nom", "avatar": "a99", "newsletter": True}).status_code == 422
-    r = client.put("/api/account/me", json={"display_name": "Nouveau nom", "avatar": "a17", "newsletter": True})
-    assert r.json()["display_name"] == "Nouveau nom" and r.json()["avatar"] == "a17"
+    attribue = client.get("/api/account/me").json()["avatar"]
+    assert attribue.isdigit() and 1 <= int(attribue) <= 100  # avatar tiré au hasard parmi les 100
+    for invalide in ("000", "101", "a17", "17"):
+        assert client.put("/api/account/me", json={"display_name": "Nouveau nom", "avatar": invalide, "newsletter": True}).status_code == 422
+    r = client.put("/api/account/me", json={"display_name": "Nouveau nom", "avatar": "017", "newsletter": True})
+    assert r.json()["display_name"] == "Nouveau nom" and r.json()["avatar"] == "017"
 
 
 def test_member_token_is_not_admin(client):

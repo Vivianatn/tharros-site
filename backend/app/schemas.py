@@ -173,7 +173,7 @@ class SubscriberOut(BaseModel):
 
 
 # ---------- Comptes joueurs
-AVATAR_RE = r"^a(0[1-9]|[1-3][0-9]|40)$"  # a01 … a40
+AVATAR_RE = r"^(0[0-9][1-9]|0[1-9][0-9]|100)$"  # 001 … 100
 
 
 class MemberRegisterIn(AntiSpamMixin):

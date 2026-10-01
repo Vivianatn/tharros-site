@@ -29,6 +29,21 @@ def init_db() -> None:
                     if default is not None:
                         ddl += f" DEFAULT {int(default) if isinstance(default, bool) else repr(default)}"
                     conn.execute(text(ddl))
+    _migrate_avatar_ids()
+
+
+def _migrate_avatar_ids() -> None:
+    """Les avatars sont passés de 40 (« a07 ») à 100 (« 007 ») : on convertit les comptes existants."""
+    from sqlalchemy import inspect, text
+
+    with engine.begin() as conn:
+        if "member" not in inspect(engine).get_table_names():
+            return
+        rows = conn.execute(text("SELECT id, avatar FROM member WHERE avatar LIKE 'a%'")).fetchall()
+        for member_id, avatar in rows:
+            number = avatar[1:]
+            new = f"{int(number):03d}" if number.isdigit() and 1 <= int(number) <= 100 else "001"
+            conn.execute(text("UPDATE member SET avatar = :a WHERE id = :i"), {"a": new, "i": member_id})
 
 
 def get_session() -> Generator[Session, None, None]:

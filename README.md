@@ -5,7 +5,7 @@ Site vitrine + administration complète pour le studio de jeu vidéo Tharros (id
 - **Front** : Vue 3 + Vite + Vue Router + Pinia (site public animé et back-office)
 - **Back** : FastAPI + SQLModel (SQLite) — API JSON, authentification JWT, envoi d'e-mails, optimisation d'images
 - **Tout le contenu est modifiable depuis `/admin`** : devlogs, jeux (avec fichiers téléchargeables par plateforme), FAQ, textes de chaque page, médias, messages reçus, liste d'attente, comptes joueurs.
-- **Comptes joueurs** : inscription / connexion / espace « Mon compte » (`/compte`), cookie httpOnly, suppression de compte (RGPD), image de profil parmi 40 avatars prédéfinis (`frontend/public/avatars/`, générés par `frontend/scripts/make-avatars.py`).
+- **Comptes joueurs** : inscription / connexion / espace « Mon compte » (`/compte`), cookie httpOnly, suppression de compte (RGPD), image de profil parmi **100 avatars** prédéfinis (`frontend/public/avatars/`, identifiants `001`…`100`, libellés dans `manifest.json`).
 
 ## Démarrer
 
