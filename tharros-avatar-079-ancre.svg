@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Avatar Tharros — Ancre">
+<title>Avatar Tharros — Ancre</title>
+<defs>
+<pattern id="gra79" patternUnits="userSpaceOnUse" width="3" height="3" patternTransform="rotate(45)"><rect width="3" height="3" fill="#171310"/><rect width="0.7" height="3" fill="#F6F1E9" opacity="0.16"/></pattern>
+<filter id="rla79" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+<feMorphology in="SourceAlpha" operator="dilate" radius="1.6" result="d1"/>
+<feMorphology in="SourceAlpha" operator="dilate" radius="2.8" result="d2"/>
+<feComposite in="d2" in2="d1" operator="out" result="ring"/>
+<feFlood flood-color="#C11F35" result="ac"/><feComposite in="ac" in2="ring" operator="in" result="outline"/>
+<feOffset in="d1" dx="2" dy="2.6" result="sh"/><feFlood flood-color="#000" flood-opacity="0.32"/><feComposite in2="sh" operator="in" result="shadow"/>
+<feMerge><feMergeNode in="shadow"/><feMergeNode in="outline"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<radialGradient id="vga79" cx="50%" cy="45%" r="60%"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.28"/></radialGradient>
+</defs>
+<rect width="256" height="256" fill="#F6F1E9"/>
+<polygon points="128,128 318,128 314,168" fill="#171310" opacity="0.08"/><polygon points="128,128 293,223 269,255" fill="#171310" opacity="0.08"/><polygon points="128,128 223,293 187,309" fill="#171310" opacity="0.08"/><polygon points="128,128 128,318 88,314" fill="#171310" opacity="0.08"/><polygon points="128,128 33,293 1,269" fill="#171310" opacity="0.08"/><polygon points="128,128 -37,223 -53,187" fill="#171310" opacity="0.08"/><polygon points="128,128 -62,128 -58,88" fill="#171310" opacity="0.08"/><polygon points="128,128 -37,33 -13,1" fill="#171310" opacity="0.08"/><polygon points="128,128 33,-37 69,-53" fill="#171310" opacity="0.08"/><polygon points="128,128 128,-62 168,-58" fill="#171310" opacity="0.08"/><polygon points="128,128 223,-37 255,-13" fill="#171310" opacity="0.08"/><polygon points="128,128 293,33 309,69" fill="#171310" opacity="0.08"/>
+<circle cx="128" cy="128" r="44" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="50" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="56" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="62" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="68" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="74" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="80" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="86" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="92" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="98" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/>
+<rect width="256" height="256" fill="url(#vga79)"/>
+<polygon points="40,20 236,20 236,216 216,236 20,236 20,40" fill="none" stroke="#C11F35" stroke-width="2.5"/>
+
+<g filter="url(#rla79)">
+<g transform="translate(48 48) scale(1.6)">
+<circle cx="50" cy="16" r="7" fill="url(#gra79)"/><circle cx="50" cy="16" r="3" fill="#F6F1E9"/><line x1="50" y1="22" x2="50" y2="84" stroke="#171310" stroke-width="6" stroke-linecap="round"/><line x1="34" y1="32" x2="66" y2="32" stroke="#171310" stroke-width="5" stroke-linecap="round"/><path d="M18,60 C18,82 40,88 50,88 C60,88 82,82 82,60" fill="none" stroke="#171310" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><polygon points="18,52 12,64 24,64" fill="url(#gra79)"/><polygon points="82,52 76,64 88,64" fill="url(#gra79)"/><circle cx="50" cy="32" r="3" fill="#C11F35"/>
+</g>
+</g>
+</svg>

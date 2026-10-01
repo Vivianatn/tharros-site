@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Avatar Tharros — Œil de l'oracle">
+<title>Avatar Tharros — Œil de l'oracle</title>
+<defs>
+<pattern id="gra41" patternUnits="userSpaceOnUse" width="3" height="3" patternTransform="rotate(45)"><rect width="3" height="3" fill="#171310"/><rect width="0.7" height="3" fill="#F6F1E9" opacity="0.16"/></pattern>
+<filter id="rla41" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+<feMorphology in="SourceAlpha" operator="dilate" radius="1.6" result="d1"/>
+<feMorphology in="SourceAlpha" operator="dilate" radius="2.8" result="d2"/>
+<feComposite in="d2" in2="d1" operator="out" result="ring"/>
+<feFlood flood-color="#F6F1E9" result="ac"/><feComposite in="ac" in2="ring" operator="in" result="outline"/>
+<feOffset in="d1" dx="2" dy="2.6" result="sh"/><feFlood flood-color="#000" flood-opacity="0.32"/><feComposite in2="sh" operator="in" result="shadow"/>
+<feMerge><feMergeNode in="shadow"/><feMergeNode in="outline"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<radialGradient id="vga41" cx="50%" cy="45%" r="60%"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.28"/></radialGradient>
+</defs>
+<rect width="256" height="256" fill="#B8672E"/>
+<polygon points="0,256 256,0 256,256" fill="#171310" opacity="0.09"/>
+<circle cx="128" cy="128" r="44" fill="none" stroke="#F6F1E9" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="50" fill="none" stroke="#F6F1E9" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="56" fill="none" stroke="#F6F1E9" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="62" fill="none" stroke="#F6F1E9" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="68" fill="none" stroke="#F6F1E9" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="74" fill="none" stroke="#F6F1E9" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="80" fill="none" stroke="#F6F1E9" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="86" fill="none" stroke="#F6F1E9" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="92" fill="none" stroke="#F6F1E9" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="98" fill="none" stroke="#F6F1E9" stroke-width="0.8" opacity="0.18"/>
+<rect width="256" height="256" fill="url(#vga41)"/>
+<polygon points="40,20 236,20 236,216 216,236 20,236 20,40" fill="none" stroke="#F6F1E9" stroke-width="2.5"/>
+
+<g filter="url(#rla41)">
+<g transform="translate(48 48) scale(1.6)">
+<line x1="80.0" y1="50.0" x2="94.0" y2="50.0" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/><line x1="75.98076211353316" y1="65.0" x2="88.1051177665153" y2="72.0" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/><line x1="65.0" y1="75.98076211353316" x2="72.0" y2="88.10511776651529" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/><line x1="50.0" y1="80.0" x2="50.0" y2="94.0" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/><line x1="35.00000000000001" y1="75.98076211353316" x2="28.00000000000001" y2="88.1051177665153" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/><line x1="24.01923788646684" y1="65.0" x2="11.894882233484694" y2="72.0" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/><line x1="20.0" y1="50.00000000000001" x2="6.0" y2="50.00000000000001" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/><line x1="24.019237886466843" y1="35.0" x2="11.8948822334847" y2="27.999999999999996" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/><line x1="34.999999999999986" y1="24.019237886466847" x2="27.99999999999998" y2="11.894882233484708" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/><line x1="49.99999999999999" y1="20.0" x2="49.99999999999999" y2="6.0" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/><line x1="65.0" y1="24.019237886466843" x2="72.0" y2="11.8948822334847" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/><line x1="75.98076211353316" y1="34.999999999999986" x2="88.10511776651529" y2="27.99999999999998" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/><path d="M12,50 C30,24 70,24 88,50 C70,76 30,76 12,50 Z" fill="url(#gra41)"/><circle cx="50" cy="50" r="14" fill="#B8672E"/><circle cx="50" cy="50" r="8" fill="#F6F1E9"/><circle cx="50" cy="50" r="3" fill="#B8672E"/>
+</g>
+</g>
+</svg>

@@ -663,4 +663,16 @@ if(matchMedia('(prefers-reduced-motion: reduce)').matches) motes.length=12;
 seek(0); requestAnimationFrame(t=>{last=t;loop(t);});
 </script>
 
+<script>
+/* Tharros — annonce la hauteur réelle au lecteur du site, pour dimensionner le cadre sans défilement. */
+(function () {
+  function send() {
+    try { parent.postMessage({ tharrosHeight: Math.ceil(document.documentElement.scrollHeight) }, '*') } catch (e) { /* hors cadre */ }
+  }
+  addEventListener('load', send);
+  addEventListener('resize', send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.documentElement);
+  setTimeout(send, 300); setTimeout(send, 1500);
+})();
+</script>
 </body></html>

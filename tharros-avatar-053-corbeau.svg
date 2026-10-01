@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Avatar Tharros — Corbeau">
+<title>Avatar Tharros — Corbeau</title>
+<defs>
+<pattern id="gra53" patternUnits="userSpaceOnUse" width="3" height="3" patternTransform="rotate(45)"><rect width="3" height="3" fill="#F6F1E9"/><rect width="0.7" height="3" fill="#171310" opacity="0.22"/></pattern>
+<filter id="rla53" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+<feMorphology in="SourceAlpha" operator="dilate" radius="1.6" result="d1"/>
+<feMorphology in="SourceAlpha" operator="dilate" radius="2.8" result="d2"/>
+<feComposite in="d2" in2="d1" operator="out" result="ring"/>
+<feFlood flood-color="#E8B96B" result="ac"/><feComposite in="ac" in2="ring" operator="in" result="outline"/>
+<feOffset in="d1" dx="2" dy="2.6" result="sh"/><feFlood flood-color="#000" flood-opacity="0.32"/><feComposite in2="sh" operator="in" result="shadow"/>
+<feMerge><feMergeNode in="shadow"/><feMergeNode in="outline"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<radialGradient id="vga53" cx="50%" cy="45%" r="60%"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.28"/></radialGradient>
+</defs>
+<rect width="256" height="256" fill="#C11F35"/>
+<polygon points="0,256 256,0 256,256" fill="#F6F1E9" opacity="0.09"/>
+<circle cx="128" cy="128" r="44" fill="none" stroke="#E8B96B" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="50" fill="none" stroke="#E8B96B" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="56" fill="none" stroke="#E8B96B" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="62" fill="none" stroke="#E8B96B" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="68" fill="none" stroke="#E8B96B" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="74" fill="none" stroke="#E8B96B" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="80" fill="none" stroke="#E8B96B" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="86" fill="none" stroke="#E8B96B" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="92" fill="none" stroke="#E8B96B" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="98" fill="none" stroke="#E8B96B" stroke-width="0.8" opacity="0.18"/>
+<rect width="256" height="256" fill="url(#vga53)"/>
+
+
+<g filter="url(#rla53)">
+<g transform="translate(48 48) scale(1.6)">
+<path d="M20,60 C24,36 44,26 62,30 L86,36 L66,44 C70,58 64,72 50,76 L30,92 L34,76 C26,72 20,68 20,60 Z" fill="url(#gra53)"/><polygon points="62,30 92,38 66,44" fill="url(#gra53)"/><circle cx="60" cy="38" r="2.5" fill="#E8B96B"/><path d="M30,60 C40,56 50,58 58,64" fill="none" stroke="#C11F35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="40" y1="90" x2="46" y2="80" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/><line x1="52" y1="92" x2="54" y2="80" stroke="#F6F1E9" stroke-width="3" stroke-linecap="round"/>
+</g>
+</g>
+</svg>

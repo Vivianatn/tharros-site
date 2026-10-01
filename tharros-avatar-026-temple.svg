@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Avatar Tharros — Temple">
+<title>Avatar Tharros — Temple</title>
+<defs>
+<pattern id="gra26" patternUnits="userSpaceOnUse" width="3" height="3" patternTransform="rotate(45)"><rect width="3" height="3" fill="#F6F1E9"/><rect width="0.7" height="3" fill="#171310" opacity="0.22"/></pattern>
+<filter id="rla26" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+<feMorphology in="SourceAlpha" operator="dilate" radius="1.6" result="d1"/>
+<feMorphology in="SourceAlpha" operator="dilate" radius="2.8" result="d2"/>
+<feComposite in="d2" in2="d1" operator="out" result="ring"/>
+<feFlood flood-color="#E8B96B" result="ac"/><feComposite in="ac" in2="ring" operator="in" result="outline"/>
+<feOffset in="d1" dx="2" dy="2.6" result="sh"/><feFlood flood-color="#000" flood-opacity="0.32"/><feComposite in2="sh" operator="in" result="shadow"/>
+<feMerge><feMergeNode in="shadow"/><feMergeNode in="outline"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<radialGradient id="vga26" cx="50%" cy="45%" r="60%"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.28"/></radialGradient>
+</defs>
+<rect width="256" height="256" fill="#C11F35"/>
+
+<path d="M60,57 L61.2,60.8 L65,62 L61.2,63.2 L60,67 L58.8,63.2 L55,62 L58.8,60.8 Z" fill="#E8B96B" opacity="0.35"/><path d="M196,53 L197.2,56.8 L201,58 L197.2,59.2 L196,63 L194.8,59.2 L191,58 L194.8,56.8 Z" fill="#E8B96B" opacity="0.35"/><path d="M46,145 L47.2,148.8 L51,150 L47.2,151.2 L46,155 L44.8,151.2 L41,150 L44.8,148.8 Z" fill="#E8B96B" opacity="0.35"/><path d="M210,155 L211.2,158.8 L215,160 L211.2,161.2 L210,165 L208.8,161.2 L205,160 L208.8,158.8 Z" fill="#E8B96B" opacity="0.35"/><path d="M84,201 L85.2,204.8 L89,206 L85.2,207.2 L84,211 L82.8,207.2 L79,206 L82.8,204.8 Z" fill="#E8B96B" opacity="0.35"/><path d="M176,205 L177.2,208.8 L181,210 L177.2,211.2 L176,215 L174.8,211.2 L171,210 L174.8,208.8 Z" fill="#E8B96B" opacity="0.35"/><path d="M128,25 L129.2,28.8 L133,30 L129.2,31.2 L128,35 L126.8,31.2 L123,30 L126.8,28.8 Z" fill="#E8B96B" opacity="0.35"/><path d="M30,95 L31.2,98.8 L35,100 L31.2,101.2 L30,105 L28.8,101.2 L25,100 L28.8,98.8 Z" fill="#E8B96B" opacity="0.35"/><path d="M226,103 L227.2,106.8 L231,108 L227.2,109.2 L226,113 L224.8,109.2 L221,108 L224.8,106.8 Z" fill="#E8B96B" opacity="0.35"/>
+<rect width="256" height="256" fill="url(#vga26)"/>
+<circle cx="128" cy="128" r="116" fill="none" stroke="#E8B96B" stroke-width="3"/><circle cx="128" cy="128" r="106" fill="none" stroke="#E8B96B" stroke-width="1.2"/>
+<rect x="124.5" y="4.5" width="7" height="7" fill="#E8B96B" transform="rotate(45 128.0 8.0)"/><rect x="244.5" y="124.5" width="7" height="7" fill="#E8B96B" transform="rotate(45 248.0 128.0)"/><rect x="124.5" y="244.5" width="7" height="7" fill="#E8B96B" transform="rotate(45 128.0 248.0)"/><rect x="4.5" y="124.5" width="7" height="7" fill="#E8B96B" transform="rotate(45 8.0 128.0)"/>
+<g filter="url(#rla26)">
+<g transform="translate(48 48) scale(1.6)">
+<polygon points="50,10 90,32 10,32" fill="url(#gra26)"/><polygon points="50,18 74,30 26,30" fill="#E8B96B"/><polygon points="12,32 88,32 88,40 12,40" fill="url(#gra26)"/><polygon points="24,40 31,40 31,78 24,78" fill="url(#gra26)"/><polygon points="37,40 44,40 44,78 37,78" fill="url(#gra26)"/><polygon points="50,40 57,40 57,78 50,78" fill="url(#gra26)"/><polygon points="63,40 70,40 70,78 63,78" fill="url(#gra26)"/><polygon points="76,40 83,40 83,78 76,78" fill="url(#gra26)"/><polygon points="14,78 86,78 90,86 10,86" fill="url(#gra26)"/>
+</g>
+</g>
+</svg>

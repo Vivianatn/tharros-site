@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Avatar Tharros — Masque d'or">
+<title>Avatar Tharros — Masque d'or</title>
+<defs>
+<pattern id="gra67" patternUnits="userSpaceOnUse" width="3" height="3" patternTransform="rotate(45)"><rect width="3" height="3" fill="#F6F1E9"/><rect width="0.7" height="3" fill="#171310" opacity="0.22"/></pattern>
+<filter id="rla67" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+<feMorphology in="SourceAlpha" operator="dilate" radius="1.6" result="d1"/>
+<feMorphology in="SourceAlpha" operator="dilate" radius="2.8" result="d2"/>
+<feComposite in="d2" in2="d1" operator="out" result="ring"/>
+<feFlood flood-color="#C11F35" result="ac"/><feComposite in="ac" in2="ring" operator="in" result="outline"/>
+<feOffset in="d1" dx="2" dy="2.6" result="sh"/><feFlood flood-color="#000" flood-opacity="0.32"/><feComposite in2="sh" operator="in" result="shadow"/>
+<feMerge><feMergeNode in="shadow"/><feMergeNode in="outline"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<radialGradient id="vga67" cx="50%" cy="45%" r="60%"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.28"/></radialGradient>
+</defs>
+<rect width="256" height="256" fill="#171310"/>
+<polygon points="0,256 256,0 256,256" fill="#F6F1E9" opacity="0.09"/>
+<path d="M60,57 L61.2,60.8 L65,62 L61.2,63.2 L60,67 L58.8,63.2 L55,62 L58.8,60.8 Z" fill="#C11F35" opacity="0.35"/><path d="M196,53 L197.2,56.8 L201,58 L197.2,59.2 L196,63 L194.8,59.2 L191,58 L194.8,56.8 Z" fill="#C11F35" opacity="0.35"/><path d="M46,145 L47.2,148.8 L51,150 L47.2,151.2 L46,155 L44.8,151.2 L41,150 L44.8,148.8 Z" fill="#C11F35" opacity="0.35"/><path d="M210,155 L211.2,158.8 L215,160 L211.2,161.2 L210,165 L208.8,161.2 L205,160 L208.8,158.8 Z" fill="#C11F35" opacity="0.35"/><path d="M84,201 L85.2,204.8 L89,206 L85.2,207.2 L84,211 L82.8,207.2 L79,206 L82.8,204.8 Z" fill="#C11F35" opacity="0.35"/><path d="M176,205 L177.2,208.8 L181,210 L177.2,211.2 L176,215 L174.8,211.2 L171,210 L174.8,208.8 Z" fill="#C11F35" opacity="0.35"/><path d="M128,25 L129.2,28.8 L133,30 L129.2,31.2 L128,35 L126.8,31.2 L123,30 L126.8,28.8 Z" fill="#C11F35" opacity="0.35"/><path d="M30,95 L31.2,98.8 L35,100 L31.2,101.2 L30,105 L28.8,101.2 L25,100 L28.8,98.8 Z" fill="#C11F35" opacity="0.35"/><path d="M226,103 L227.2,106.8 L231,108 L227.2,109.2 L226,113 L224.8,109.2 L221,108 L224.8,106.8 Z" fill="#C11F35" opacity="0.35"/>
+<rect width="256" height="256" fill="url(#vga67)"/>
+<polygon points="40,20 236,20 236,216 216,236 20,236 20,40" fill="none" stroke="#C11F35" stroke-width="2.5"/>
+
+<g filter="url(#rla67)">
+<g transform="translate(48 48) scale(1.6)">
+<path d="M50,10 C72,10 80,28 78,52 C76,76 64,90 50,90 C36,90 24,76 22,52 C20,28 28,10 50,10 Z" fill="#C11F35"/><path d="M30,40 C36,36 44,36 46,42 M54,42 C56,36 64,36 70,40" fill="none" stroke="#F6F1E9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M32,46 L44,46 M56,46 L68,46" fill="none" stroke="#F6F1E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polygon points="48,48 52,48 54,64 46,64" fill="url(#gra67)"/><path d="M38,72 C44,76 56,76 62,72" fill="none" stroke="#F6F1E9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M34,78 C40,86 60,86 66,78" fill="none" stroke="#F6F1E9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M24,30 L76,30" fill="none" stroke="#F6F1E9" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

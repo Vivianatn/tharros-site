@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Avatar Tharros — Arc et flèche">
+<title>Avatar Tharros — Arc et flèche</title>
+<defs>
+<pattern id="gra34" patternUnits="userSpaceOnUse" width="3" height="3" patternTransform="rotate(45)"><rect width="3" height="3" fill="#F6F1E9"/><rect width="0.7" height="3" fill="#171310" opacity="0.22"/></pattern>
+<filter id="rla34" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+<feMorphology in="SourceAlpha" operator="dilate" radius="1.6" result="d1"/>
+<feMorphology in="SourceAlpha" operator="dilate" radius="2.8" result="d2"/>
+<feComposite in="d2" in2="d1" operator="out" result="ring"/>
+<feFlood flood-color="#C11F35" result="ac"/><feComposite in="ac" in2="ring" operator="in" result="outline"/>
+<feOffset in="d1" dx="2" dy="2.6" result="sh"/><feFlood flood-color="#000" flood-opacity="0.32"/><feComposite in2="sh" operator="in" result="shadow"/>
+<feMerge><feMergeNode in="shadow"/><feMergeNode in="outline"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<radialGradient id="vga34" cx="50%" cy="45%" r="60%"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.28"/></radialGradient>
+</defs>
+<rect width="256" height="256" fill="#171310"/>
+<rect x="0" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="16" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="32" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="48" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="64" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="80" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="96" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="112" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="128" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="144" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="160" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="176" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="192" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="208" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="224" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="240" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/><rect x="256" y="0" width="5" height="256" fill="#F6F1E9" opacity="0.07"/>
+<circle cx="128" cy="128" r="44" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="50" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="56" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="62" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="68" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="74" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="80" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="86" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="92" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/><circle cx="128" cy="128" r="98" fill="none" stroke="#C11F35" stroke-width="0.8" opacity="0.18"/>
+<rect width="256" height="256" fill="url(#vga34)"/>
+<circle cx="128" cy="128" r="116" fill="none" stroke="#C11F35" stroke-width="3"/><circle cx="128" cy="128" r="106" fill="none" stroke="#C11F35" stroke-width="1.2"/>
+<rect x="124.5" y="4.5" width="7" height="7" fill="#C11F35" transform="rotate(45 128.0 8.0)"/><rect x="244.5" y="124.5" width="7" height="7" fill="#C11F35" transform="rotate(45 248.0 128.0)"/><rect x="124.5" y="244.5" width="7" height="7" fill="#C11F35" transform="rotate(45 128.0 248.0)"/><rect x="4.5" y="124.5" width="7" height="7" fill="#C11F35" transform="rotate(45 8.0 128.0)"/>
+<g filter="url(#rla34)">
+<g transform="translate(48 48) scale(1.6)">
+<path d="M32,8 C70,24 70,76 32,92" fill="none" stroke="#F6F1E9" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><line x1="32" y1="8" x2="32" y2="92" stroke="#F6F1E9" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="50" x2="86" y2="50" stroke="#C11F35" stroke-width="3" stroke-linecap="round"/><polygon points="94,50 82,44 82,56" fill="#C11F35"/><polygon points="14,50 8,44 20,44 26,50 20,56 8,56" fill="#C11F35"/>
+</g>
+</g>
+</svg>

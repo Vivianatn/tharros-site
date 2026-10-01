@@ -123,6 +123,21 @@ def delete_post(post_id: int, session: SessionDep):
 EMBED_DIR = "devlogs"
 MAX_EMBED_MB = 20
 
+# Injecté dans les animations téléversées : elles annoncent leur hauteur au lecteur du site,
+# qui dimensionne alors le cadre exactement (aucun défilement interne).
+HEIGHT_REPORTER = """<script>
+(function () {
+  function send() {
+    try { parent.postMessage({ tharrosHeight: Math.ceil(document.documentElement.scrollHeight) }, '*') } catch (e) { /* hors cadre */ }
+  }
+  addEventListener('load', send);
+  addEventListener('resize', send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.documentElement);
+  setTimeout(send, 300); setTimeout(send, 1500);
+})();
+</script>
+"""
+
 
 def _delete_embed(url: str | None) -> None:
     if url and url.startswith(f"/media/{EMBED_DIR}/"):
@@ -139,9 +154,12 @@ async def upload_post_animation(post_id: int, session: SessionDep, file: UploadF
     if len(content) > MAX_EMBED_MB * 1024 * 1024:
         raise HTTPException(status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, f"Fichier trop lourd (max {MAX_EMBED_MB} Mo)")
     try:
-        content.decode("utf-8")
+        html = content.decode("utf-8")
     except UnicodeDecodeError:
         raise HTTPException(status.HTTP_422_UNPROCESSABLE_ENTITY, "Le fichier doit être encodé en UTF-8")
+    if "tharrosHeight" not in html:
+        html = html.replace("</body>", HEIGHT_REPORTER + "</body>", 1) if "</body>" in html else html + HEIGHT_REPORTER
+    content = html.encode("utf-8")
     dest_dir = get_settings().media_dir / EMBED_DIR
     dest_dir.mkdir(parents=True, exist_ok=True)
     _delete_embed(post.embed_url)
