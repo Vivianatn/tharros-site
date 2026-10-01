@@ -25,7 +25,7 @@ useHead('Le studio', computed(() => s.value.lede))
         <MarkdownBlock :source="s.history_md" />
       </div>
       <div v-reveal="150" class="emblem">
-        <img src="/brand/tharros-emblem.svg" alt="Emblème Tharros : crinière de lion en pic anguleux, ailes d'aigle, œil grenat, cerclés d'un anneau" width="320" height="320" loading="lazy">
+        <img src="/brand/tharros-embleme-fonce.svg" alt="Emblème Tharros : masque de lion rayonnant, cerclé d'une frise grecque" width="320" height="320" loading="lazy">
       </div>
     </div>
   </section>

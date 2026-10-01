@@ -5,6 +5,7 @@ import { api } from '@/api/client'
 import { useHead } from '@/composables/useHead'
 import { formatDate } from '@/utils/format'
 import MarkdownBlock from '@/components/MarkdownBlock.vue'
+import DevlogPlayer from '@/components/DevlogPlayer.vue'
 import CtaBlock from '@/components/CtaBlock.vue'
 import NotFoundView from './NotFoundView.vue'
 
@@ -39,7 +40,8 @@ useHead(computed(() => post.value?.title || ''), computed(() => post.value?.exce
     <div class="frise" aria-hidden="true"></div>
     <article class="section surface-light">
       <div class="container container--narrow">
-        <img v-if="post.cover_url" v-reveal :src="post.cover_url" :alt="`Illustration : ${post.title}`" class="cover" loading="lazy" decoding="async">
+        <DevlogPlayer v-if="post.embed_url" :src="post.embed_url" :title="post.title" />
+        <img v-else-if="post.cover_url" v-reveal :src="post.cover_url" :alt="`Illustration : ${post.title}`" class="cover" loading="lazy" decoding="async">
         <MarkdownBlock :source="post.body_md" />
         <p style="margin-top: 48px"><RouterLink class="link-arrow" :to="{ name: 'journal' }">Tous les billets</RouterLink></p>
       </div>

@@ -8,7 +8,7 @@ defineProps({ post: { type: Object, required: true } })
   <article class="post">
     <time :datetime="post.published_at">{{ formatMonth(post.published_at || post.created_at) }}</time>
     <div>
-      <span class="post__tag">{{ post.tag }}</span>
+      <span class="post__tag">{{ post.tag }}<template v-if="post.embed_url"> · <span class="post__anim">Animé</span></template></span>
       <h2><RouterLink :to="{ name: 'post', params: { slug: post.slug } }">{{ post.title }}</RouterLink></h2>
       <p>{{ post.excerpt }}</p>
       <RouterLink class="link-arrow" :to="{ name: 'post', params: { slug: post.slug } }">Lire le billet</RouterLink>
@@ -25,4 +25,5 @@ h2 a { color: var(--heading); text-decoration: none; }
 h2 a:hover { color: var(--link); }
 p { color: var(--fg-soft); margin-bottom: .6em; }
 .post__tag { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--fg-muted); }
+.post__anim { color: var(--kicker); }
 </style>

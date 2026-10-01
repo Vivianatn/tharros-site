@@ -30,6 +30,7 @@ class PostIn(BaseModel):
     body_md: str = ""
     tag: str = Field(default="Devlog", max_length=40)
     cover_url: Optional[str] = None
+    embed_url: Optional[str] = None
     published: bool = False
     published_at: Optional[datetime] = None
 
@@ -123,6 +124,11 @@ class MediaOut(BaseModel):
 
 class MediaUpdateIn(BaseModel):
     alt: str = Field(max_length=300)
+
+
+class EmbedOut(BaseModel):
+    url: str
+    size_bytes: int
 
 
 # ---------- Formulaires publics

@@ -102,11 +102,17 @@ SETTINGS: dict[str, dict] = {
             {"k": "Étymologie", "v": "Du grec ancien θάρρος, « courage »"},
         ],
         "assets": [
-            {"title": "Logo horizontal — encre", "desc": "Pour fonds clairs.", "url": "/brand/tharros-logo.svg", "dark": False},
-            {"title": "Logo horizontal — marbre", "desc": "Pour fonds sombres.", "url": "/brand/tharros-logo-light.svg", "dark": True},
-            {"title": "Emblème seul", "desc": "Icône, avatar, favicon.", "url": "/brand/tharros-emblem.svg", "dark": False},
+            {"title": "Logo principal — fonds clairs", "desc": "Version foncée, verticale.", "url": "/brand/tharros-logo-principal-fonce.svg", "dark": False},
+            {"title": "Logo principal — fonds sombres", "desc": "Version claire, verticale.", "url": "/brand/tharros-logo-principal-clair.svg", "dark": True},
+            {"title": "Logo horizontal — fonds clairs", "desc": "Pour bandeaux et signatures.", "url": "/brand/tharros-logo-horizontal-fonce.svg", "dark": False},
+            {"title": "Logo horizontal — fonds sombres", "desc": "Pour bandeaux et signatures.", "url": "/brand/tharros-logo-horizontal-clair.svg", "dark": True},
+            {"title": "Emblème — fonds clairs", "desc": "Sceau du lion, version foncée.", "url": "/brand/tharros-embleme-fonce.svg", "dark": False},
+            {"title": "Emblème — fonds sombres", "desc": "Sceau du lion, version claire.", "url": "/brand/tharros-embleme-clair.svg", "dark": True},
+            {"title": "Nom seul", "desc": "Le mot THARROS, version foncée.", "url": "/brand/tharros-nom-fonce.svg", "dark": False},
+            {"title": "Sceau", "desc": "Favicon et monogramme.", "url": "/brand/tharros-sceau.svg", "dark": True},
+            {"title": "Icône d'application", "desc": "Carrée, pour les stores.", "url": "/brand/tharros-icone.svg", "dark": True},
+            {"title": "Logo animé", "desc": "SVG animé, 1280 × 720.", "url": "/brand/tharros-logo-anime.svg", "dark": True},
             {"title": "Muses — visuel clé", "desc": "Format 4:3.", "url": "/brand/muses.svg", "dark": True},
-            {"title": "Muses — bannière", "desc": "Format large 16:7.", "url": "/brand/muses-wide.svg", "dark": True},
             {"title": "Image de partage", "desc": "1200 × 630, JPEG.", "url": "/og-image.jpg", "dark": True},
         ],
         "contact_md": "Écrivez à tharrs.studio@gmail.com avec « Presse » en objet. Les clés de test seront distribuées à l'ouverture de la phase de test fermée.",
@@ -155,46 +161,81 @@ SETTINGS: dict[str, dict] = {
 GAME = dict(
     slug="muses",
     title="Muses",
-    status="En développement",
-    tagline="Les neuf Muses se sont tues, et avec elles la mémoire du monde. Partez les retrouver, une à une, dans une Grèce de marbre et de bronze.",
-    pitch_md=(
-        "Muses est un jeu d'aventure narrative à la troisième personne. Vous parcourez une Grèce figée — temples vides, théâtres muets, bibliothèques aux pages blanches — à la recherche des neuf Muses. Chacune garde un art oublié : la poésie, l'histoire, la musique, la danse, l'astronomie… Retrouver une Muse, c'est rendre cet art au monde, et voir le monde changer autour de vous.\n\n"
-        "Pas de combat. Ce qui avance, ce sont vos conversations, vos observations et les liens que vous tissez entre les lieux. Le jeu retient ce que vous dites : les Muses s'en souviennent, et le finale dépend de qui vous avez ramené — et comment."
+    status="Prototype jouable",
+    tagline=(
+        "Sous terre, des ruines oubliées racontent toute une civilisation. Un metroidvania 2D sur l'archéologie : "
+        "chaque salle est une page de l'Histoire d'un peuple disparu."
     ),
+    pitch_md="""Muses est un **metroidvania 2D sur l'archéologie**. On explore des ruines souterraines très anciennes qui retracent, salle après salle, l'Histoire d'un peuple disparu : fragments de savoir figés dans le cristal, clés anciennes, portes qui attendent depuis des siècles.
+
+Le déplacement est au cœur du jeu — course, saut, double saut, dash, escalade, mode concentration — et le revolver, qui s'améliore pièce par pièce, tient tête aux automates qui gardent les lieux. Les rares habitants des ruines, eux, se parlent : ce que l'on apprend d'eux reste acquis.""",
     cover_url="/brand/muses.svg",
     banner_url="/brand/muses-wide.svg",
     specs=[
-        {"k": "Genre", "v": "Aventure narrative, exploration, énigmes"},
-        {"k": "Vue", "v": "Troisième personne"},
+        {"k": "Genre", "v": "Metroidvania 2D, exploration et archéologie"},
+        {"k": "Vue", "v": "2D, défilement latéral"},
         {"k": "Joueurs", "v": "Solo"},
-        {"k": "Plateforme", "v": "PC (Steam) — consoles à l'étude"},
-        {"k": "Langues", "v": "Français et anglais (texte)"},
+        {"k": "Moteur", "v": "Godot 4.7"},
+        {"k": "Plateforme", "v": "PC — autres plateformes à l'étude"},
         {"k": "Sortie", "v": "À annoncer"},
     ],
     pillars=[
-        {"num": "01", "title": "Le monde se souvient", "text": "Chaque Muse retrouvée transforme les lieux déjà visités : une place vide se remplit de musique, une fresque effacée réapparaît."},
-        {"num": "02", "title": "Parler, pas frapper", "text": "Aucun combat. Les Muses ne se gagnent pas, elles se convainquent. Vos choix de dialogue ont des conséquences durables."},
-        {"num": "03", "title": "Le regard de l'aigle", "text": "À tout moment, prenez de la hauteur : une vue d'ensemble pour lire les lieux, relier les indices et repérer ce qui a changé."},
+        {"num": "01", "title": "Un corps qui répond", "text": "Course, saut, double saut, dash, escalade : coyote time, jump buffer et saut à hauteur variable pour que le personnage obéisse toujours au doigt."},
+        {"num": "02", "title": "Les ruines racontent", "text": "Chaque salle est une page de l'Histoire du peuple disparu. On lit le lieu autant qu'on le traverse."},
+        {"num": "03", "title": "Revolver contre automate", "text": "Des gardiens au champ de vision orienté, coupé par les murs, et un revolver qui s'améliore pièce par pièce : canon, barillet, crosse."},
     ],
     progress=[
-        {"k": "Terminé", "v": "Concept, direction artistique, prototype de navigation, système de dialogue"},
-        {"k": "En cours", "v": "Construction des neuf lieux, écriture des Muses, musique"},
-        {"k": "À venir", "v": "Phase de test fermée, localisation, page Steam"},
+        {"k": "Terminé", "v": "Déplacement complet, combat au revolver, PNJ et dialogues, objets et inventaire, écran-titre, sauvegardes et paramètres"},
+        {"k": "En cours", "v": "Structure des ruines : relier les salles et faire du lieu un espace qu'on apprend par cœur"},
+        {"k": "À venir", "v": "Chapitres suivants, phase de test fermée, page Steam"},
     ],
     featured=True,
     published=True,
 )
 
 POSTS = [
-    dict(slug="pourquoi-muses", title="Pourquoi Muses", tag="Devlog n° 1", published_at=datetime(2025, 11, 15, tzinfo=timezone.utc),
-         excerpt="Un jeu sans combat sur des déesses qu'on a oubliées, par un studio d'une personne.",
-         body_md="Ce premier billet raconte d'où vient l'idée, et pourquoi c'est celle-là qu'il fallait faire en premier.\n\n## L'oubli comme mécanique\n\nQue se passe-t-il quand plus personne ne se souvient de la musique ? C'est la question de départ de Muses.\n\n## Un studio d'une personne\n\nFaire petit, faire net, faire jusqu'au bout."),
-    dict(slug="direction-artistique-verrouillee", title="Direction artistique verrouillée", tag="Devlog n° 2", published_at=datetime(2026, 1, 20, tzinfo=timezone.utc),
-         excerpt="Marbre, bronze, grenat. Géométrie plutôt que trait organique.",
-         body_md="Le moodboard du studio devient la bible visuelle du jeu — les mêmes lignes droites, les mêmes frises. Chaque lieu de Muses est construit à partir de trois formes : le triangle, le cercle, la colonne."),
-    dict(slug="le-systeme-de-dialogue-tient-debout", title="Le système de dialogue tient debout", tag="Devlog n° 3", published_at=datetime(2026, 9, 10, tzinfo=timezone.utc),
-         excerpt="Premier prototype jouable des conversations avec les Muses : choix, conséquences, et surtout mémoire.",
-         body_md="Une Muse se souvient de ce que vous lui avez dit trois lieux plus tôt. Le code est laid, mais ça marche.\n\nLe mois prochain : le nettoyer, et écrire Calliope."),
+    dict(
+        slug="devlog-1-douze-jours",
+        title="Devlog #1 — douze jours pour un prototype jouable",
+        tag="Devlog n° 1",
+        published_at=datetime(2026, 10, 1, tzinfo=timezone.utc),
+        excerpt=(
+            "Muses est un metroidvania 2D sur l'archéologie. En douze jours : un héros qui répond au doigt, un revolver, "
+            "des automates, des PNJ bavards, un inventaire et un écran-titre."
+        ),
+        embed_url="/devlogs/muses-devlog-1.html",
+        body_md="""Douze jours de développement, du 20 septembre au 1er octobre 2026, et un prototype jouable au bout. **Muses** est un metroidvania 2D sur l'archéologie : explorer des ruines souterraines très anciennes qui retracent, salle après salle, l'Histoire d'un peuple disparu.
+
+L'animation ci-dessus déroule tout ce qui existe déjà dans le jeu. Le texte ci-dessous en reprend l'essentiel.
+
+## Un corps qui répond
+
+Le héros a ses sprites haute définition — repos, marche, course, saut, chute, agrippage, tir — sur des planches séparées vers la gauche et vers la droite : au demi-tour, l'animation reprend exactement à la même image, et les pieds restent calés sur la capsule de collision.
+
+Course, saut, double saut, dash, escalade, mode concentration. Avec ce qu'il faut pour que ça ne frustre jamais : *coyote time*, *jump buffer*, saut à hauteur variable, et dégâts de chute annulés par un agrippage ou un dash.
+
+## Revolver contre automate
+
+Les automates ont un champ de vision orienté, coupé par les murs : ils poursuivent, cherchent la distance de frappe, encaissent le recul. L'attaque se joue en trois temps, et la dépouille ne bloque plus le passage.
+
+Le revolver s'améliore par pièces : **canon rayé** (balles 30 % plus rapides, portée +40 %), **barillet huilé** (cadence +25 %), **crosse gravée** (+1 dégât par balle).
+
+## Vory, Dory et Léry
+
+Les dialogues sont écrits en simple texte — choix, sauts entre étiquettes, conditions et variables — et le jeu retient ce qu'on apprend : demandez son nom au robot, il devient Vory. Les PNJ errent dans les salles sans jamais tomber d'une plateforme.
+
+## Ce que les ruines ont gardé
+
+Les objets flottent, éclairent les alentours et disparaissent en fondu au contact. Un objet ramassé ne revient jamais, même après un chargement.
+
+## Tout ce qu'il faut autour du jeu
+
+Écran-titre avec l'intro du studio et le logo animé, menu personnage, inventaire, équipement, compétences, sauvegardes et paramètres. Sur « Continuer », la miniature sépia reprend ses couleurs et devient le jeu.
+
+## Ensuite
+
+Chaud pour la structure : relier les salles entre elles, et faire des ruines un lieu qu'on apprend par cœur.""",
+    ),
 ]
 
 FAQ = [

@@ -7,6 +7,7 @@ import { useHead } from '@/composables/useHead'
 import { slugify, toLocalInput, fromLocalInput } from '@/utils/format'
 import MarkdownEditor from '@/components/admin/MarkdownEditor.vue'
 import ImageField from '@/components/admin/ImageField.vue'
+import { getToken } from '@/api/client'
 
 const route = useRoute()
 const router = useRouter()
@@ -16,7 +17,9 @@ const isNew = computed(() => !id.value)
 const busy = ref(false)
 const slugTouched = ref(false)
 
-const form = reactive({ title: '', slug: '', tag: 'Devlog', excerpt: '', body_md: '', cover_url: '', published: false, published_at: '' })
+const form = reactive({ title: '', slug: '', tag: 'Devlog', excerpt: '', body_md: '', cover_url: '', embed_url: '', published: false, published_at: '' })
+const animBusy = ref(false)
+const animProgress = ref(0)
 useHead(computed(() => (isNew.value ? 'Nouveau billet' : `Modifier : ${form.title}`)))
 
 onMounted(async () => {
@@ -24,16 +27,51 @@ onMounted(async () => {
   const posts = await api.get('/api/admin/posts', { auth: true })
   const post = posts.find((p) => String(p.id) === String(id.value))
   if (!post) { toast.error('Billet introuvable'); return router.push({ name: 'admin.posts' }) }
-  Object.assign(form, { ...post, cover_url: post.cover_url || '', published_at: toLocalInput(post.published_at) })
+  Object.assign(form, { ...post, cover_url: post.cover_url || '', embed_url: post.embed_url || '', published_at: toLocalInput(post.published_at) })
   slugTouched.value = true
 })
 
 watch(() => form.title, (t) => { if (!slugTouched.value) form.slug = slugify(t) })
 
+/** L'animation peut peser plusieurs Mo : envoi en XHR pour afficher la progression. */
+function uploadAnimation(file) {
+  if (!file) return
+  animBusy.value = true
+  animProgress.value = 0
+  const data = new FormData()
+  data.append('file', file)
+  const xhr = new XMLHttpRequest()
+  xhr.open('POST', `/api/admin/posts/${id.value}/animation`)
+  xhr.setRequestHeader('Authorization', `Bearer ${getToken()}`)
+  xhr.upload.onprogress = (e) => { if (e.lengthComputable) animProgress.value = Math.round((e.loaded / e.total) * 100) }
+  xhr.onload = () => {
+    animBusy.value = false
+    if (xhr.status === 201) {
+      form.embed_url = JSON.parse(xhr.responseText).url
+      toast.success('Animation en ligne')
+    } else {
+      let msg = `Erreur ${xhr.status}`
+      try { msg = JSON.parse(xhr.responseText).detail || msg } catch { /* réponse non JSON */ }
+      toast.error(msg)
+    }
+  }
+  xhr.onerror = () => { animBusy.value = false; toast.error('Téléversement interrompu') }
+  xhr.send(data)
+}
+
+async function removeAnimation() {
+  if (!confirm("Retirer l'animation de ce billet ?")) return
+  try {
+    await api.delete(`/api/admin/posts/${id.value}/animation`, { auth: true })
+    form.embed_url = ''
+    toast.success('Animation retirée')
+  } catch (e) { toast.error(e.message) }
+}
+
 async function save(publish = null) {
   busy.value = true
   try {
-    const payload = { ...form, cover_url: form.cover_url || null, published_at: fromLocalInput(form.published_at) }
+    const payload = { ...form, cover_url: form.cover_url || null, embed_url: form.embed_url || null, published_at: fromLocalInput(form.published_at) }
     if (publish !== null) payload.published = publish
     const saved = isNew.value
       ? await api.post('/api/admin/posts', payload, { auth: true })
@@ -80,7 +118,21 @@ async function save(publish = null) {
           <label for="excerpt">Résumé (affiché dans les listes et pour le référencement)</label>
           <textarea id="excerpt" v-model="form.excerpt" maxlength="400" rows="2"></textarea>
         </div>
-        <div class="span-2"><ImageField id="cover" v-model="form.cover_url" label="Image de couverture" hint="Facultative. Affichée en tête du billet." /></div>
+        <div class="span-2"><ImageField id="cover" v-model="form.cover_url" label="Image de couverture" hint="Facultative. Affichée en tête du billet, sauf si une animation est présente." /></div>
+        <div class="field span-2">
+          <label for="anim">Animation du devlog</label>
+          <p class="hint" style="margin: 0 0 8px">Page HTML autonome (tout inclus : styles, scripts, images). Elle est jouée dans le billet, avec un bouton plein écran. 20 Mo maximum.</p>
+          <template v-if="isNew"><p class="hint">Enregistrez d'abord le billet pour pouvoir ajouter une animation.</p></template>
+          <template v-else>
+            <p v-if="form.embed_url" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 10px">
+              <span class="pill pill--on">En ligne</span>
+              <a class="btn btn--link" :href="form.embed_url" target="_blank" rel="noopener">Prévisualiser</a>
+              <button type="button" class="btn btn--link" style="color: var(--grenat-sombre)" @click="removeAnimation">Retirer</button>
+            </p>
+            <input id="anim" type="file" accept=".html,text/html" :disabled="animBusy" @change="uploadAnimation($event.target.files[0]); $event.target.value = ''">
+            <div v-if="animBusy" class="progress" role="progressbar" :aria-valuenow="animProgress"><div class="progress__bar" :style="{ width: animProgress + '%' }"></div><span>{{ animProgress < 100 ? `Envoi… ${animProgress} %` : 'Enregistrement…' }}</span></div>
+          </template>
+        </div>
         <div class="field span-2">
           <label for="body">Contenu</label>
           <MarkdownEditor id="body" v-model="form.body_md" />

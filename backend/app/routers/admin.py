@@ -12,7 +12,7 @@ from ..config import get_settings
 from ..database import get_session
 from ..models import FaqItem, Game, GameBuild, Media, Member, Message, Post, Setting, Subscriber
 from ..schemas import (
-    PLATFORMS, BuildOut, FaqIn, FaqOut, GameIn, GameOut, MediaOut, MediaUpdateIn, MemberAdminOut, MessageOut, OkOut,
+    PLATFORMS, BuildOut, EmbedOut, FaqIn, FaqOut, GameIn, GameOut, MediaOut, MediaUpdateIn, MemberAdminOut, MessageOut, OkOut,
     PostIn, PostOut, SettingOut, SubscriberOut,
 )
 from .downloads import BUILDS_DIR, build_path
@@ -112,9 +112,56 @@ def update_post(post_id: int, data: PostIn, session: SessionDep):
 
 @router.delete("/posts/{post_id}", response_model=OkOut)
 def delete_post(post_id: int, session: SessionDep):
-    session.delete(_get_or_404(session, Post, post_id))
+    post = _get_or_404(session, Post, post_id)
+    _delete_embed(post.embed_url)
+    session.delete(post)
     session.commit()
     return OkOut()
+
+
+# ---------- Animations de devlog (page HTML autonome jouée dans le billet)
+EMBED_DIR = "devlogs"
+MAX_EMBED_MB = 20
+
+
+def _delete_embed(url: str | None) -> None:
+    if url and url.startswith(f"/media/{EMBED_DIR}/"):
+        (get_settings().media_dir / EMBED_DIR / Path(url).name).unlink(missing_ok=True)
+
+
+@router.post("/posts/{post_id}/animation", response_model=EmbedOut, status_code=201)
+async def upload_post_animation(post_id: int, session: SessionDep, file: UploadFile = File(...)):
+    """Téléverse l'animation d'un devlog : une page HTML autonome (tout inclus : styles, scripts, images)."""
+    post = _get_or_404(session, Post, post_id)
+    if Path(file.filename or "").suffix.lower() not in (".html", ".htm"):
+        raise HTTPException(status.HTTP_422_UNPROCESSABLE_ENTITY, "Fichier HTML attendu (.html)")
+    content = await file.read()
+    if len(content) > MAX_EMBED_MB * 1024 * 1024:
+        raise HTTPException(status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, f"Fichier trop lourd (max {MAX_EMBED_MB} Mo)")
+    try:
+        content.decode("utf-8")
+    except UnicodeDecodeError:
+        raise HTTPException(status.HTTP_422_UNPROCESSABLE_ENTITY, "Le fichier doit être encodé en UTF-8")
+    dest_dir = get_settings().media_dir / EMBED_DIR
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    _delete_embed(post.embed_url)
+    filename = f"{post.slug}-{secrets.token_hex(4)}.html"
+    (dest_dir / filename).write_bytes(content)
+    post.embed_url = f"/media/{EMBED_DIR}/{filename}"
+    post.updated_at = datetime.now(timezone.utc)
+    session.add(post)
+    session.commit()
+    return EmbedOut(url=post.embed_url, size_bytes=len(content))
+
+
+@router.delete("/posts/{post_id}/animation", response_model=OkOut)
+def delete_post_animation(post_id: int, session: SessionDep):
+    post = _get_or_404(session, Post, post_id)
+    _delete_embed(post.embed_url)
+    post.embed_url = None
+    session.add(post)
+    session.commit()
+    return OkOut(message="Animation retirée")
 
 
 # ---------- Jeux

@@ -58,7 +58,7 @@ const year = new Date().getFullYear()
 .site-footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
 @media (max-width: 860px) { .site-footer__grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .site-footer__grid { grid-template-columns: 1fr; } }
-.brand { display: inline-flex; color: var(--marbre); }
+.brand { display: inline-flex; }
 h3 { font-size: 16px; letter-spacing: .16em; color: var(--or); margin-bottom: 16px; }
 ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 a { color: var(--pierre-claire); text-decoration: none; }

@@ -49,7 +49,7 @@ async def security_headers(request: Request, call_next):
     if request.url.path.startswith("/assets/"):
         response.headers.setdefault("Cache-Control", "public, max-age=31536000, immutable")  # noms de fichiers hachés
     response.headers.setdefault("X-Content-Type-Options", "nosniff")
-    response.headers.setdefault("X-Frame-Options", "DENY")
+    response.headers.setdefault("X-Frame-Options", "SAMEORIGIN")  # les animations de devlog sont jouées dans un <iframe> du site
     response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
     response.headers.setdefault("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
     if settings.environment == "production":

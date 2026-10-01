@@ -32,7 +32,7 @@ async function submit() {
 <template>
   <div class="login">
     <form class="login__card" @submit.prevent="submit">
-      <div style="color: var(--encre); margin-bottom: 20px"><BrandLogo :height="40" /></div>
+      <div style="color: var(--encre); margin-bottom: 20px"><BrandLogo :height="40" variant="fonce" /></div>
       <span class="kicker">Administration</span>
       <h1>Connexion</h1>
       <div class="form">

@@ -56,8 +56,8 @@ watch(open, (v) => { document.body.style.overflow = v ? 'hidden' : '' })
 <style scoped>
 .site-header { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--encre) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(246, 241, 233, .08); }
 .site-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: var(--header-h); }
-.brand { display: inline-flex; align-items: center; color: var(--marbre); transition: transform .3s var(--ease); }
-.brand:hover { transform: scale(1.03); color: var(--marbre); }
+.brand { display: inline-flex; align-items: center; transition: transform .3s var(--ease); }
+.brand:hover { transform: scale(1.03); }
 .nav { display: flex; align-items: center; gap: 32px; }
 .nav__list { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
 .nav__list a { color: var(--pierre-claire); text-decoration: none; font-weight: 600; font-size: 15px; letter-spacing: .04em; padding: 6px 0; position: relative; }

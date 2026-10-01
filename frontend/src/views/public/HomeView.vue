@@ -19,7 +19,7 @@ useHead('', computed(() => content.site.description))
 <template>
   <section class="hero surface-dark" aria-labelledby="hero-title">
     <div class="hero__bg" aria-hidden="true"></div>
-    <img class="hero__emblem" src="/brand/tharros-emblem-light.svg" alt="" width="760" height="760" aria-hidden="true">
+    <img class="hero__emblem" src="/brand/tharros-embleme-clair.svg" alt="" width="760" height="760" aria-hidden="true">
     <div class="container hero__inner">
       <span class="kicker hero__item">{{ home.kicker }}</span>
       <h1 id="hero-title" class="hero__item">{{ home.title_line1 }}<br><span class="accent">{{ home.title_line2 }}</span></h1>
@@ -76,7 +76,7 @@ useHead('', computed(() => content.site.description))
         <RouterLink class="link-arrow" :to="{ name: 'studio' }">Découvrir le studio</RouterLink>
       </div>
       <div v-reveal="150" class="studio__emblem">
-        <img src="/brand/tharros-emblem-light.svg" alt="Emblème Tharros : crinière de lion en pic anguleux, ailes d'aigle, œil grenat, cerclés d'un anneau" width="320" height="320" loading="lazy" decoding="async">
+        <img src="/brand/tharros-embleme-clair.svg" alt="Emblème Tharros : masque de lion rayonnant, cerclé d'une frise grecque" width="320" height="320" loading="lazy" decoding="async">
       </div>
     </div>
   </section>

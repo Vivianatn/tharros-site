@@ -35,6 +35,7 @@ class Post(SQLModel, table=True):
     body_md: str = ""
     tag: str = "Devlog"
     cover_url: Optional[str] = None
+    embed_url: Optional[str] = None  # animation interactive du devlog (page HTML autonome)
     published: bool = False
     published_at: Optional[datetime] = None
     created_at: datetime = Field(default_factory=utcnow)

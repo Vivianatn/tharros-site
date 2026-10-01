@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="552" height="120" viewBox="0 0 552 120" role="img" aria-label="Tharros — nom, version claire">
+<title>Tharros — nom, version claire</title>
+<svg x="0" y="0" width="552" height="120.0" viewBox="0 0 552 120">
+<mask id="wm13" maskUnits="userSpaceOnUse" x="0" y="0" width="552" height="120"><rect width="552" height="120" fill="#000"/>
+<g fill="#fff" fill-rule="evenodd">
+<polygon points="0,0 70,0 70,20 45,20 45,120 25,120 25,20 0,20"></polygon>
+<polygon points="84,0 104,0 104,50 130,50 130,0 150,0 150,120 130,120 130,70 104,70 104,120 84,120"></polygon>
+<polygon points="164,120 192,0 210,0 238,120 218,120 201,40 184,120"></polygon>
+<path d="M252,0 L302,0 L316,14 L316,52 L304,62 L316,120 L296,120 L286,68 L272,68 L272,120 L252,120 Z M272,20 L296,20 L296,48 L272,48 Z"></path>
+<path d="M330,0 L380,0 L394,14 L394,52 L382,62 L394,120 L374,120 L364,68 L350,68 L350,120 L330,120 Z M350,20 L374,20 L374,48 L350,48 Z"></path>
+<path d="M422,0 L460,0 L474,14 L474,106 L460,120 L422,120 L408,106 L408,14 Z M428,20 L454,20 L454,100 L428,100 Z"></path>
+<polygon points="552,0 552,20 508,20 508,50 538,50 552,64 552,106 538,120 488,120 488,100 532,100 532,70 502,70 488,56 488,14 502,0"></polygon>
+</g>
+<g stroke="#000" stroke-width="2.5" stroke-linecap="butt">
+<line x1="35" y1="26" x2="35" y2="114"></line>
+<line x1="94" y1="6" x2="94" y2="46"></line><line x1="94" y1="74" x2="94" y2="114"></line>
+<line x1="140" y1="6" x2="140" y2="46"></line><line x1="140" y1="74" x2="140" y2="114"></line>
+<line x1="262" y1="6" x2="262" y2="114"></line>
+<line x1="340" y1="6" x2="340" y2="114"></line>
+<line x1="418" y1="18" x2="418" y2="102"></line>
+<line x1="464" y1="18" x2="464" y2="102"></line>
+</g>
+
+</mask>
+<rect width="552" height="120" fill="#F6F1E9" mask="url(#wm13)"/><polygon points="201,84 208,92 201,100 194,92" fill="#C11F35"/></svg>
+</svg>

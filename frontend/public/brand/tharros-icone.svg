@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="340" height="340" viewBox="0 0 340 340" role="img" aria-label="Tharros — sceau (favicon, monogramme)">
-<title>Tharros — sceau (favicon, monogramme)</title>
-<circle cx="170" cy="170" r="167" fill="#171310" stroke="#B8672E" stroke-width="6"/><svg x="50" y="50" width="240" height="240" viewBox="0 0 200 200">
-<mask id="em9" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="200"><rect width="200" height="200" fill="#000"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-label="Tharros — icône d’application">
+<title>Tharros — icône d’application</title>
+<polygon points="40,0 320,0 320,280 280,320 0,320 0,40" fill="#C11F35"/><svg x="60" y="46" width="200" height="200" viewBox="0 0 200 200">
+<mask id="em10" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="200"><rect width="200" height="200" fill="#000"/>
 <circle cx="100" cy="100" r="93" fill="none" stroke="#fff" stroke-width="5"></circle>
 <circle cx="100" cy="100" r="77" fill="none" stroke="#fff" stroke-width="2"></circle>
 <g fill="#fff"><circle cx="185.0" cy="100.0" r="2.4"></circle><circle cx="183.1" cy="117.7" r="2.4"></circle><circle cx="177.7" cy="134.6" r="2.4"></circle><circle cx="168.8" cy="150.0" r="2.4"></circle><circle cx="156.9" cy="163.2" r="2.4"></circle><circle cx="142.5" cy="173.6" r="2.4"></circle><circle cx="126.3" cy="180.8" r="2.4"></circle><circle cx="108.9" cy="184.5" r="2.4"></circle><circle cx="91.1" cy="184.5" r="2.4"></circle><circle cx="73.7" cy="180.8" r="2.4"></circle><circle cx="57.5" cy="173.6" r="2.4"></circle><circle cx="43.1" cy="163.2" r="2.4"></circle><circle cx="31.2" cy="150.0" r="2.4"></circle><circle cx="22.3" cy="134.6" r="2.4"></circle><circle cx="16.9" cy="117.7" r="2.4"></circle><circle cx="15.0" cy="100.0" r="2.4"></circle><circle cx="16.9" cy="82.3" r="2.4"></circle><circle cx="22.3" cy="65.4" r="2.4"></circle><circle cx="31.2" cy="50.0" r="2.4"></circle><circle cx="43.1" cy="36.8" r="2.4"></circle><circle cx="57.5" cy="26.4" r="2.4"></circle><circle cx="73.7" cy="19.2" r="2.4"></circle><circle cx="91.1" cy="15.5" r="2.4"></circle><circle cx="108.9" cy="15.5" r="2.4"></circle><circle cx="126.3" cy="19.2" r="2.4"></circle><circle cx="142.5" cy="26.4" r="2.4"></circle><circle cx="156.9" cy="36.8" r="2.4"></circle><circle cx="168.8" cy="50.0" r="2.4"></circle><circle cx="177.7" cy="65.4" r="2.4"></circle><circle cx="183.1" cy="82.3" r="2.4"></circle></g>
@@ -30,5 +30,9 @@
 <polygon points="117,89 105,91 107,96 115,95" fill="#fff"></polygon>
 </g>
 </mask>
-<rect width="200" height="200" fill="#F6F1E9" mask="url(#em9)"/><g transform="translate(100 100) scale(0.8) translate(-100 -100)"><polygon points="83,89 95,91 93,96 85,95" fill="#C11F35"/><polygon points="117,89 105,91 107,96 115,95" fill="#C11F35"/></g></svg>
+<rect width="200" height="200" fill="#F6F1E9" mask="url(#em10)"/><g transform="translate(100 100) scale(0.8) translate(-100 -100)"><polygon points="83,89 95,91 93,96 85,95" fill="#171310"/><polygon points="117,89 105,91 107,96 115,95" fill="#171310"/></g></svg><svg x="60" y="260" width="200" height="30" viewBox="-2 -2 204 30"><g fill="none" stroke="#F6F1E9" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter">
+<line x1="0" y1="0" x2="200" y2="0"></line>
+<polyline points="0.0,24 0.0,4 16.0,4 16.0,19 6.0,19 6.0,10 11.0,10"></polyline><polyline points="20.0,24 20.0,4 36.0,4 36.0,19 26.0,19 26.0,10 31.0,10"></polyline><polyline points="40.0,24 40.0,4 56.0,4 56.0,19 46.0,19 46.0,10 51.0,10"></polyline><polyline points="60.0,24 60.0,4 76.0,4 76.0,19 66.0,19 66.0,10 71.0,10"></polyline><polyline points="80.0,24 80.0,4 96.0,4 96.0,19 86.0,19 86.0,10 91.0,10"></polyline><polyline points="100.0,24 100.0,4 116.0,4 116.0,19 106.0,19 106.0,10 111.0,10"></polyline><polyline points="120.0,24 120.0,4 136.0,4 136.0,19 126.0,19 126.0,10 131.0,10"></polyline><polyline points="140.0,24 140.0,4 156.0,4 156.0,19 146.0,19 146.0,10 151.0,10"></polyline><polyline points="160.0,24 160.0,4 176.0,4 176.0,19 166.0,19 166.0,10 171.0,10"></polyline><polyline points="180.0,24 180.0,4 196.0,4 196.0,19 186.0,19 186.0,10 191.0,10"></polyline>
+<line x1="0" y1="24" x2="200" y2="24"></line>
+</g></svg>
 </svg>

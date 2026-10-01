@@ -14,7 +14,7 @@ content.load()
   <SiteHeader />
   <main id="main">
     <div v-if="!content.loaded && !content.error" class="loading" aria-live="polite">
-      <img src="/brand/tharros-emblem.svg" alt="" width="64" height="64" class="loading__emblem">
+      <img src="/brand/tharros-embleme-fonce.svg" alt="" width="64" height="64" class="loading__emblem">
       <span class="visually-hidden">Chargement…</span>
     </div>
     <div v-else-if="content.error" class="container section">
